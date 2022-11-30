@@ -14,7 +14,7 @@ export default class ListaProdutos extends Component<props> {
         <h1> Lista de Produtos e Serviços </h1>
         <div className="collection">
           <a className="collection-item">Shampoo Dove 500ml</a>
-          <a className="collection-item"> Shampoo Clear CR7 Edition </a>
+          <a className="collection-item">Shampoo Clear CR7 Edition </a>
           <a className="collection-item">Corte de Cabelo</a>
           <a className="collection-item">Maquiagem</a>
         </div>

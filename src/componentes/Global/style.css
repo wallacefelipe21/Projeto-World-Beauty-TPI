@@ -1,0 +1,35 @@
+/* Cadastro de Clientes, Produtos e Serviços*/
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lista de Cliente, Produtos e Serviços*/
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.collection{
+    width: 70%;
+}
+
+.collection-item {
+    color: #000 !important;
+}
+
+/* Global*/
+h1{
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+

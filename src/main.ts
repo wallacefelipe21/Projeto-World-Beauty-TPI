@@ -81,6 +81,7 @@ while (execucao) {
       console.log(`3 - Listar Todas as compras`);
       console.log(`4 - Listar os 10 Clientes com Mais Compra`);
       console.log(`5 - Listar Todos os Clientes por Gênero`);
+      console.log(`6 - Listar Todos os Produtos Pelo Mais Consumidos`);
 
       console.log("\n-------- SAIR --------");
       console.log(`0 - Sair\n`);
@@ -107,6 +108,10 @@ while (execucao) {
         case 5:
           let listarGen = new OutrasListagens(empresa);
           listarGen.listarGenero();
+          break;
+        case 6:
+          let listarConsProd = new OutrasListagens(empresa);
+          listarConsProd.listarProdConsum();
           break;
         case 0:
       }

@@ -18,7 +18,7 @@ export default class OutrasListagens {
       console.log('-------- ' + (l + 1) + ' --------');
       for(let i = 0; i < num;i++) {
         this.filial.getClientes.map((cliente) => {
-          if(list[i] === cliente.getCPF && escolhido[1] < Number(cliente.getQuantComp)) {
+          if(list[i] === cliente.getCPF && escolhido[1] < cliente.getQuantComp) {
             escolhido = [cliente.getCPF,cliente.getQuantComp]
           }
         })
@@ -171,5 +171,93 @@ export default class OutrasListagens {
       })
       console.log('\n');
     }
+  }
+  public listarCliQuantM(): void {
+    let list : string[] = []
+    let num = 0
+    let escolhido : [string,number] = ['0',0]
+    let ultimoEscolhido = ''
+    console.log(`\nLista dos 10 Clientes que Mais Consumiram: \n`);
+    this.filial.getClientes.map((cliente) => {
+      list[num] = cliente.getCPF
+      escolhido = [cliente.getCPF,cliente.getQuantComp]
+      num += 1
+    });
+    for(let l = 0; l < 10; l++) {
+      console.log('-------- ' + (l + 1) + ' --------');
+      for(let i = 0; i < num;i++) {
+        this.filial.getClientes.map((cliente) => {
+          if(list[i] === cliente.getCPF && escolhido[1] > cliente.getQuantComp) {
+            escolhido = [cliente.getCPF,cliente.getQuantComp]
+          }
+        })
+      }
+      this.filial.getClientes.map((cliente) => {
+        if(cliente.getCPF === escolhido[0]) {
+          console.log(`Nome: ` + cliente.nome);
+          console.log(`CPF: ` + cliente.getCPF);
+          console.log(`RG: ` + cliente.getRG);
+          console.log(`Telefone: ` + cliente.getTelefone);
+          console.log(`Gênero: ` + cliente.getGenero);
+          console.log(`Quantidade de Compras: ` + cliente.getQuantComp);
+        }
+      })
+      for(let i = 0; i < num; i++) {
+        if(list[i] === escolhido[0]) {
+          ultimoEscolhido = list[i]
+          list[i] = ''
+        }
+      }
+      for(let i = 0; i < num; i++) {
+        if(list[i] != '') {
+          this.filial.getClientes.map((cliente) => {
+            if(cliente.getCPF === list[i]) {
+              escolhido = [cliente.getCPF,cliente.getQuantComp]
+            }
+          })
+        }
+      }
+      if(escolhido[0] === ultimoEscolhido) {
+        escolhido = ['',0]
+      }
+    }
+    console.log(`\n`);
+  }
+  public listarCliGast(): void {
+    let list : string[] = []
+    let num = 0
+    let escolhido : [string,number] = ['0',-1]
+    console.log(`\nLista dos 5 Clientes que Mais Gastaram: \n`);
+    this.filial.getClientes.map((cliente) => {
+      list[num] = cliente.getCPF
+      num += 1
+    });
+    for(let l = 0; l < 5; l++) {
+      console.log('-------- ' + (l + 1) + ' --------');
+      for(let i = 0; i < num;i++) {
+        this.filial.getClientes.map((cliente) => {
+          if(list[i] === cliente.getCPF && escolhido[1] < cliente.getQuantGast) {
+            escolhido = [cliente.getCPF,cliente.getQuantGast]
+          }
+        })
+      }
+      this.filial.getClientes.map((cliente) => {
+        if(cliente.getCPF === escolhido[0]) {
+          console.log(`Nome: ` + cliente.nome);
+          console.log(`CPF: ` + cliente.getCPF);
+          console.log(`RG: ` + cliente.getRG);
+          console.log(`Telefone: ` + cliente.getTelefone);
+          console.log(`Gênero: ` + cliente.getGenero);
+          console.log(`Quantidade Gasta: ` + cliente.getQuantGast);
+          for(let i = 0; i < num;i++) {
+            if(list[i] === escolhido[0]) {
+              list[i] = ''
+              escolhido = ['0',-1]
+            }
+          }
+        }
+      })
+    }
+    console.log(`\n`);
   }
 }

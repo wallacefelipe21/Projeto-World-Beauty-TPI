@@ -14,16 +14,42 @@ export default class CadastroCliente extends Cadastro {
   }
 
   public cadastrar(): void {
+    let x = true
     console.log(`\nInício do Cadastro do Cliente`);
     let nome = this.entrada.receberTexto(`Informe o Nome do Cliente: `);
     let CPF = this.entrada.receberTexto(`Informe o CPF: `);
-    let RG = this.entrada.receberTexto(`Informe o RG: `);
-    let telefone = this.entrada.receberNumero(`Informe o Telefone: `);
     let genero = this.entrada.receberTexto(`Informe o Gênero(M/F): `);
 
-    
+    let cliente = new Customer(nome, CPF, genero);
 
-    let cliente = new Customer(nome, CPF, RG, telefone,genero);
+    let RG = this.entrada.receberTexto(`Informe o RG: `);
+    cliente.addRG(RG)
+    while(x) {
+    let resposta = this.entrada.receberTexto(`Possui mais algum RG para inserir?(S/N) `);
+      if(resposta === 'S') {  
+        RG = this.entrada.receberTexto(`Informe o RG: `);
+        cliente.addRG(RG)  
+      } else if (resposta === 'N') {
+        x = false
+      } else {
+        console.log(`Resposta não aceita. Reentre.`);
+      }
+    }
+    x = true
+    let telefone = this.entrada.receberNumero(`Informe o Telefone: `);
+    cliente.addTelefone(telefone)
+    while(x) {
+    let resposta = this.entrada.receberTexto(`Possui mais algum Telefone para inserir?(S/N) `);
+      if(resposta === 'S') { 
+        telefone = this.entrada.receberNumero(`Informe o Telefone: `);
+        cliente.addTelefone(telefone)  
+      } else if (resposta === 'N') {
+        x = false
+      } else {
+        console.log(`Resposta não aceita. Reentre.`);
+      }
+    }
+
     this.filial.addCliente(cliente);
     console.log(`\nCadastro concluído!)\n`);
   }

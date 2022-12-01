@@ -8,6 +8,7 @@ export default class OutrasListagens {
   public listarCliQuant(): void {
     let list : string[] = []
     let num = 0
+    let num2 = 0
     let escolhido : [string,number] = ['0',-1]
     console.log(`\nLista dos 10 Clientes que Mais Consumiram: \n`);
     this.filial.getClientes.map((cliente) => {
@@ -27,8 +28,18 @@ export default class OutrasListagens {
         if(cliente.getCPF === escolhido[0]) {
           console.log(`Nome: ` + cliente.nome);
           console.log(`CPF: ` + cliente.getCPF);
-          console.log(`RG: ` + cliente.getRG);
-          console.log(`Telefone: ` + cliente.getTelefone);
+          console.log(`RGs: `);
+          num2 = 0
+          cliente.getRGs.forEach((RG) => {
+            num2 += 1
+            console.log(num2 + `: ` + RG);
+          })
+          num2 = 0
+          console.log(`Telefone: `);
+          cliente.getTelefones.forEach((telefone) => {
+            num2 += 1
+            console.log(num2 + `: ` + telefone);
+          })
           console.log(`Gênero: ` + cliente.getGenero);
           console.log(`Quantidade de Compras: ` + cliente.getQuantComp);
           for(let i = 0; i < num;i++) {
@@ -43,25 +54,47 @@ export default class OutrasListagens {
     console.log(`\n`);
   }
   public listarGenero(): void {
+    let num2 = 0
     console.log(`\nLista de Todos os Clientes por Gênero: \n`);
     console.log(`---------- Masculino ----------`);
     this.filial.getClientes.forEach((cliente) => {
         if(cliente.getGenero === 'M'){
             console.log(`Nome: ` + cliente.nome);
             console.log(`CPF: ` + cliente.getCPF);
-            console.log(`RG: ` + cliente.getRG);
-            console.log(`Telefone: ` + cliente.getTelefone);
+            console.log(`RGs: `);
+            num2 = 0
+            cliente.getRGs.forEach((RG) => {
+              num2 += 1
+              console.log(num2 + `: ` + RG);
+            })
+            num2 = 0
+            console.log(`Telefone: `);
+            cliente.getTelefones.forEach((telefone) => {
+              num2 += 1
+              console.log(num2 + `: ` + telefone);
+            })
             console.log(`--------------------------------------`);
         }
     });
+    num2 = 0
     console.log('\n');
     console.log(`---------- Feminino ----------`);
     this.filial.getClientes.forEach((cliente) => {
         if(cliente.getGenero === 'F'){
             console.log(`Nome: ` + cliente.nome);
             console.log(`CPF: ` + cliente.getCPF);
-            console.log(`RG: ` + cliente.getRG);
-            console.log(`Telefone: ` + cliente.getTelefone);
+            console.log(`RGs: `);
+            num2 = 0
+            cliente.getRGs.forEach((RG) => {
+              num2 += 1
+              console.log(num2 + `: ` + RG);
+            })
+            num2 = 0
+            console.log(`Telefone: `);
+            cliente.getTelefones.forEach((telefone) => {
+              num2 += 1
+              console.log(num2 + `: ` + telefone);
+            })
             console.log(`--------------------------------------`);
         }
     });
@@ -175,6 +208,7 @@ export default class OutrasListagens {
   public listarCliQuantM(): void {
     let list : string[] = []
     let num = 0
+    let num2 = 0
     let escolhido : [string,number] = ['0',0]
     let ultimoEscolhido = ''
     console.log(`\nLista dos 10 Clientes que Mais Consumiram: \n`);
@@ -196,8 +230,18 @@ export default class OutrasListagens {
         if(cliente.getCPF === escolhido[0]) {
           console.log(`Nome: ` + cliente.nome);
           console.log(`CPF: ` + cliente.getCPF);
-          console.log(`RG: ` + cliente.getRG);
-          console.log(`Telefone: ` + cliente.getTelefone);
+          num2 = 0
+          console.log(`RGs: `);
+          cliente.getRGs.forEach((RG) => {
+            num2 += 1
+            console.log(num2 + `: ` + RG);
+          })
+          num2 = 0
+          console.log(`Telefone: `);
+          cliente.getTelefones.forEach((telefone) => {
+            num2 += 1
+            console.log(num2 + `: ` + telefone);
+          })
           console.log(`Gênero: ` + cliente.getGenero);
           console.log(`Quantidade de Compras: ` + cliente.getQuantComp);
         }
@@ -226,6 +270,7 @@ export default class OutrasListagens {
   public listarCliGast(): void {
     let list : string[] = []
     let num = 0
+    let num2 = 0
     let escolhido : [string,number] = ['0',-1]
     console.log(`\nLista dos 5 Clientes que Mais Gastaram: \n`);
     this.filial.getClientes.map((cliente) => {
@@ -245,8 +290,18 @@ export default class OutrasListagens {
         if(cliente.getCPF === escolhido[0]) {
           console.log(`Nome: ` + cliente.nome);
           console.log(`CPF: ` + cliente.getCPF);
-          console.log(`RG: ` + cliente.getRG);
-          console.log(`Telefone: ` + cliente.getTelefone);
+          num2 = 0
+          console.log(`RGs: `);
+          cliente.getRGs.forEach((RG) => {
+            num2 += 1
+            console.log(num2 + `: ` + RG);
+          })
+          num2 = 0
+          console.log(`Telefone: `);
+          cliente.getTelefones.forEach((telefone) => {
+            num2 += 1
+            console.log(num2 + `: ` + telefone);
+          })
           console.log(`Gênero: ` + cliente.getGenero);
           console.log(`Quantidade Gasta: ` + cliente.getQuantGast);
           for(let i = 0; i < num;i++) {

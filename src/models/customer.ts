@@ -1,30 +1,24 @@
 export default class Customer {
     public nome: string
     private CPF: string //Idenficador
-    private RG: string
-    private telefone: number
     private genero: string
     private quantidadeComprada: number
     private quantidadeGasta: number
+    private listaRG: Array<string>
+    private listaTelefone: Array<number>
 
-    constructor(nome: string, cpf: string, rg: string, telefone: number, genero: string) {
+    constructor(nome: string, cpf: string, genero: string) {
         this.nome = nome
         this.CPF = cpf
-        this.RG = rg
-        this.telefone = telefone
         this.genero = genero
         this.quantidadeComprada = 0
         this.quantidadeGasta = 0
+        this.listaRG = []
+        this.listaTelefone = []
     }
 
     public get getCPF(): string {
         return this.CPF
-    }
-    public get getRG(): string {
-        return this.RG
-    }
-    public get getTelefone(): number{
-        return this.telefone
     }
     public get getGenero(): string{
         return this.genero
@@ -35,15 +29,15 @@ export default class Customer {
     public get getQuantGast(): number{
         return this.quantidadeGasta
     }
+    public get getRGs(): string[] {
+        return this.listaRG;
+    }
+    public get getTelefones(): number[] {
+        return this.listaTelefone;
+    }
 
     public setCPF(cpf: string) {
         this.CPF = cpf
-    }
-    public setRG(rg: string) {
-        this.RG = rg
-    }
-    public setTelefone(telefone: number) {
-        this.telefone = telefone
     }
     public setGenero(genero: string) {
         this.genero = genero
@@ -53,5 +47,21 @@ export default class Customer {
     }
     public setQuantGast(quantidadeGasta: number) {
         this.quantidadeGasta = quantidadeGasta
+    }
+    public addRG(rg: string) {
+        const rgs = this.listaRG;
+        rgs.push(rg);
+        this.listaRG = rgs;
+    }
+    public setRG(rg: string[]) {
+        this.listaRG = rg;
+    }
+    public addTelefone(telefone: number) {
+        const tel = this.listaTelefone;
+        tel.push(telefone);
+        this.listaTelefone = tel;
+    }
+    public setTelefone(telefone: number[]) {
+        this.listaTelefone = telefone;
     }
 }

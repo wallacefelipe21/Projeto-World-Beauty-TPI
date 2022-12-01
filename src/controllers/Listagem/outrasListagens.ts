@@ -101,4 +101,75 @@ export default class OutrasListagens {
       console.log('\n');
     }
   }
+  public listarProdConsumGen(): void {
+    let prod : number[] = []
+    let num = 0
+    let escolhido : [number,number] = [0,-1]
+    console.log(`\nLista dos Produtos Mais Consumidos por Gênero: \n`);
+    console.log(`---------- Masculino ----------`);
+    this.filial.getProdutos.forEach((produto) => {
+      prod[produto.getCodigo] = 0
+      num += 1
+    })
+    this.filial.getCompras.forEach((compras) => {
+      this.filial.getClientes.forEach((cliente) => {
+        if(cliente.getCPF === compras.getCPF && cliente.getGenero === 'M') {
+          prod[compras.getCodigo] += compras.getQuantidade
+        }
+      })
+    })
+    for(let i = 0; i < num; i++) {
+      console.log('-------- ' + (i + 1) + ' --------');
+      this.filial.getProdutos.forEach((produto) => {
+        if(prod[produto.getCodigo] > escolhido[1]) {
+          escolhido = [produto.getCodigo,prod[produto.getCodigo]]
+        }
+      })
+      this.filial.getProdutos.forEach((produto) => {
+        if(escolhido[0] === produto.getCodigo) {
+          console.log(`Codigo: ` + produto.codigo);
+          console.log(`Nome: ` + produto.nome);
+          console.log(`Valor Unitário: R$` + produto.getValorUnit);
+          console.log(`Marca: ` + produto.getMarca);
+          console.log(`Quantidade Comprada: ` + escolhido[1]);
+          console.log(`--------------------------------------`);
+          prod[escolhido[0]] = -1
+          escolhido = [0,-1]
+        }
+      })
+      console.log('\n');
+    }
+    console.log(`---------- Feminino ----------`);
+    this.filial.getProdutos.forEach((produto) => {
+      prod[produto.getCodigo] = 0
+    })
+    this.filial.getCompras.forEach((compras) => {
+      this.filial.getClientes.forEach((cliente) => {
+        if(cliente.getCPF === compras.getCPF && cliente.getGenero === 'F') {
+          prod[compras.getCodigo] += compras.getQuantidade
+        }
+      })
+    })
+    for(let i = 0; i < num; i++) {
+      console.log('-------- ' + (i + 1) + ' --------');
+      this.filial.getProdutos.forEach((produto) => {
+        if(prod[produto.getCodigo] > escolhido[1]) {
+          escolhido = [produto.getCodigo,prod[produto.getCodigo]]
+        }
+      })
+      this.filial.getProdutos.forEach((produto) => {
+        if(escolhido[0] === produto.getCodigo) {
+          console.log(`Codigo: ` + produto.codigo);
+          console.log(`Nome: ` + produto.nome);
+          console.log(`Valor Unitário: R$` + produto.getValorUnit);
+          console.log(`Marca: ` + produto.getMarca);
+          console.log(`Quantidade Comprada: ` + escolhido[1]);
+          console.log(`--------------------------------------`);
+          prod[escolhido[0]] = -1
+          escolhido = [0,-1]
+        }
+      })
+      console.log('\n');
+    }
+  }
 }

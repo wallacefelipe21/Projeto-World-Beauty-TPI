@@ -6,6 +6,7 @@ export default class Subsidiary {
   public codigo: number;
   public nome: string;
   public endereco: string;
+  private totalCompras: number
   private listaClientes: Customer[];
   private listaProdutos: Product[];
   private listaCompras: Compras[];
@@ -14,11 +15,15 @@ export default class Subsidiary {
     this.codigo = codigo;
     this.nome = nome;
     this.endereco = endereco;
+    this.totalCompras = 0
     this.listaClientes = [];
     this.listaProdutos = [];
     this.listaCompras = [];
   }
 
+  public get getComprasRealizadas(): number {
+    return this.totalCompras;
+  }
   public get getClientes(): Customer[] {
     return this.listaClientes;
   }
@@ -29,6 +34,9 @@ export default class Subsidiary {
     return this.listaCompras;
   }
 
+  public setComprasRealizadas(ComprasRealizadas: number) {
+    this.totalCompras = ComprasRealizadas
+  }
   public addCliente(cliente: Customer) {
     const clientes = this.listaClientes;
     clientes.push(cliente);

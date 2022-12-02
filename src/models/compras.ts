@@ -2,11 +2,13 @@ export default class Compras {
     private codigoProduto: number
     private quantidade: number
     private cpfCliente: string
+    private codigo: number
 
-    constructor(codigoProduto: number, quantidade: number, cpfCliente: string){
+    constructor(codigo: number, codigoProduto: number, quantidade: number, cpfCliente: string){
         this.codigoProduto = codigoProduto
         this.quantidade = quantidade
         this.cpfCliente = cpfCliente
+        this.codigo = codigo
     }
 
     public get getCodigo(): number{
@@ -18,6 +20,9 @@ export default class Compras {
     public get getCPF(): string{
         return this.cpfCliente
     }
+    public get getCodCompra(): number {
+        return this.codigo
+    }
 
     public setCodigo(codigoProduto: number){
         this.codigoProduto = codigoProduto
@@ -27,5 +32,8 @@ export default class Compras {
     }
     public setCPF(cpfCliente: string){
         this.cpfCliente = cpfCliente
+    }
+    public setCodCompra(codCompra: number) {
+        this.codigo = codCompra
     }
 }

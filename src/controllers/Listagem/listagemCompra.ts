@@ -10,6 +10,8 @@ export default class ListagemCompras extends Listagem {
   public listar(): void {
     console.log(`\nLista de Todos as Compras: \n`);
     this.filial.getCompras.forEach((compras) => {
+      console.log(`Codigo: ` + compras.getCodCompra);
+      
         this.filial.getClientes.forEach((cliente) => {
             if (cliente.getCPF === compras.getCPF) {
                 console.log(`Cliente: ` + cliente.nome);

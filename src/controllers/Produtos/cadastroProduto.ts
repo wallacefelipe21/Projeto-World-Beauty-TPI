@@ -19,8 +19,9 @@ export default class CadastroProduto extends Cadastro {
     let nome = this.entrada.receberTexto(`Informe o Nome: `);
     let valor_unit = this.entrada.receberNumero(`Informe Valor Unitário: R$ `);
     let marca = this.entrada.receberTexto(`Informe a Marca: `);
+    let tipo = this.entrada.receberTexto(`Informe o tipo(Produto/Serviço): `)
 
-    let produto = new Product(codigo, nome, valor_unit, marca);
+    let produto = new Product(codigo, nome, valor_unit, marca,tipo);
     this.filial.addProduto(produto);
     console.log(`\nCadastro concluído!)\n`);
   }

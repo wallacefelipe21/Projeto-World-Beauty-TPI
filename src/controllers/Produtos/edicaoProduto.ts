@@ -20,7 +20,8 @@ export default class EdicaoProdutos extends Edicao {
       if (product.codigo === codigo) {
         product.nome = this.entrada.receberTexto(`Novo Nome: `);
         product.setValorUnit(this.entrada.receberNumero(`Novo Valor Unitário: R$ `));
-        product.setMarca(this.entrada.receberTexto(`Nova Marca `));
+        product.setMarca(this.entrada.receberTexto(`Nova Marca: `));
+        product.setTipo(this.entrada.receberTexto(`Novo Tipo: `))
         console.log('\nAs informações foram atualizadas com sucesso!\n')
       }
       

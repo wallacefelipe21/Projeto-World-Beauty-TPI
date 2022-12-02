@@ -125,6 +125,7 @@ export default class OutrasListagens {
           console.log(`Nome: ` + produto.nome);
           console.log(`Valor Unitário: R$` + produto.getValorUnit);
           console.log(`Marca: ` + produto.getMarca);
+          console.log(`Tipo: ` + produto.getTipo);
           console.log(`Quantidade Comprada: ` + escolhido[1]);
           console.log(`--------------------------------------`);
           prod[escolhido[0]] = -1
@@ -164,6 +165,7 @@ export default class OutrasListagens {
           console.log(`Nome: ` + produto.nome);
           console.log(`Valor Unitário: R$` + produto.getValorUnit);
           console.log(`Marca: ` + produto.getMarca);
+          console.log(`Tipo: ` + produto.getTipo);
           console.log(`Quantidade Comprada: ` + escolhido[1]);
           console.log(`--------------------------------------`);
           prod[escolhido[0]] = -1
@@ -196,6 +198,7 @@ export default class OutrasListagens {
           console.log(`Nome: ` + produto.nome);
           console.log(`Valor Unitário: R$` + produto.getValorUnit);
           console.log(`Marca: ` + produto.getMarca);
+          console.log(`Tipo: ` + produto.getTipo);
           console.log(`Quantidade Comprada: ` + escolhido[1]);
           console.log(`--------------------------------------`);
           prod[escolhido[0]] = -1

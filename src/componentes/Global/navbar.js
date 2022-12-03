@@ -1,7 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "materialize-css/dist/css/materialize.min.css";
-import M from "materialize-css";
-import { Component } from "react";
 
 export default function BarraNavegacao(props) {
   const gerarListaBotoes = () => {

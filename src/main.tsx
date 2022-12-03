@@ -4,12 +4,16 @@ import CadastroCliente from "./componentes/Cliente/cadastroCliente";
 import ListaCliente from "./componentes/Cliente/gerenciaCliente";
 import CadastroProduto from "./componentes/Produtos/cadastroProdutos";
 import ListaProdutos from "./componentes/Produtos/gerenciaProdutos";
+import CadastroCompra from "./componentes/Compra/cadastroCompra";
+import ListaCompra from "./componentes/Compra/gerenciaCompra";
 
 type state = {
   cadastroCli: string;
   gerenciaCli: string;
   cadastroProd: string;
   gerenciaProd: string;
+  cadastroCompra: string;
+  gerenciaCompra: string;
 };
 
 export default class Main extends Component<{}, state> {
@@ -20,6 +24,8 @@ export default class Main extends Component<{}, state> {
       gerenciaCli: "Gerenciar Clientes",
       cadastroProd: "Cadastrar Produtos",
       gerenciaProd: "Gerenciar Produtos",
+      cadastroCompra: "Cadastrar Compra",
+      gerenciaCompra: "Gerenciar Compra",
     };
     this.selecionarView = this.selecionarView.bind(this);
   }
@@ -32,6 +38,8 @@ export default class Main extends Component<{}, state> {
       gerenciaCli: novaTela,
       cadastroProd: novaTela,
       gerenciaProd: novaTela,
+      cadastroCompra: novaTela,
+      gerenciaCompra: novaTela,
     });
   }
 
@@ -42,9 +50,11 @@ export default class Main extends Component<{}, state> {
         tema="pink darken-3"
         botoes={[
           "Gerenciar Produtos",
-          "Cadastro Produtos",
+          "Cadastrar Produtos",
           "Gerenciar Clientes",
-          "Cadastro Cliente",
+          "Cadastrar Clientes",
+          "Gerenciar Compras",
+          "Cadastrar Compras",
         ]}
       />
     );
@@ -58,7 +68,7 @@ export default class Main extends Component<{}, state> {
       );
     }
 
-    if (this.state.cadastroProd === "Cadastro Produtos") {
+    if (this.state.cadastroProd === "Cadastrar Produtos") {
       return (
         <>
           {barraNavegacao}
@@ -76,15 +86,31 @@ export default class Main extends Component<{}, state> {
       );
     }
 
-    if (this.state.cadastroCli === "Cadastro Cliente") {
-      {
-        return (
-          <>
-            {barraNavegacao}
-            <CadastroCliente tema="pink darken-3" />
-          </>
-        );
-      }
+    if (this.state.cadastroCli === "Cadastrar Clientes") {
+      return (
+        <>
+          {barraNavegacao}
+          <CadastroCliente tema="pink darken-3" />
+        </>
+      );
+    }
+
+    if (this.state.cadastroCli === "Gerenciar Compras") {
+      return (
+        <>
+          {barraNavegacao}
+          <ListaCompra tema="pink darken-3" />
+        </>
+      );
+    }
+
+    if (this.state.cadastroCli === "Cadastrar Compras") {
+      return (
+        <>
+          {barraNavegacao}
+          <CadastroCompra tema="pink darken-3" />
+        </>
+      );
     }
   }
 }

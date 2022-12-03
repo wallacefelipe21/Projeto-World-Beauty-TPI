@@ -58,7 +58,7 @@ export default class OutrasListagens {
     console.log(`\nLista de Todos os Clientes por Gênero: \n`);
     console.log(`---------- Masculino ----------`);
     this.filial.getClientes.forEach((cliente) => {
-        if(cliente.getGenero === 'M'){
+        if(cliente.getGenero === 'M' || cliente.getGenero === 'm' || cliente.getGenero === 'Masculino' || cliente.getGenero === 'masculino'){
             console.log(`Nome: ` + cliente.nome);
             console.log(`CPF: ` + cliente.getCPF);
             console.log(`RGs: `);
@@ -80,7 +80,7 @@ export default class OutrasListagens {
     console.log('\n');
     console.log(`---------- Feminino ----------`);
     this.filial.getClientes.forEach((cliente) => {
-        if(cliente.getGenero === 'F'){
+        if(cliente.getGenero === 'F' || cliente.getGenero === 'f' || cliente.getGenero === 'Feminino' || cliente.getGenero === 'feminino'){
             console.log(`Nome: ` + cliente.nome);
             console.log(`CPF: ` + cliente.getCPF);
             console.log(`RGs: `);
@@ -147,7 +147,7 @@ export default class OutrasListagens {
     })
     this.filial.getCompras.forEach((compras) => {
       this.filial.getClientes.forEach((cliente) => {
-        if(cliente.getCPF === compras.getCPF && cliente.getGenero === 'M') {
+        if(cliente.getCPF === compras.getCPF && (cliente.getGenero === 'M' || cliente.getGenero === 'm' || cliente.getGenero === 'Masculino' || cliente.getGenero === 'masculino')) {
           prod[compras.getCodigo] += compras.getQuantidade
         }
       })
@@ -180,7 +180,7 @@ export default class OutrasListagens {
     })
     this.filial.getCompras.forEach((compras) => {
       this.filial.getClientes.forEach((cliente) => {
-        if(cliente.getCPF === compras.getCPF && cliente.getGenero === 'F') {
+        if(cliente.getCPF === compras.getCPF && (cliente.getGenero === 'F' || cliente.getGenero === 'f' || cliente.getGenero === 'Feminino' || cliente.getGenero === 'feminino')) {
           prod[compras.getCodigo] += compras.getQuantidade
         }
       })

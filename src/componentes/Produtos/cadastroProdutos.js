@@ -1,9 +1,9 @@
 import "../Global/style.css";
 
-export default function CadastroProdutos(props){
-    const estiloBotao = `btn waves-effect waves-light ${props.tema}`
-    return (
-      <div className="row">
+export default function CadastroProdutos(props) {
+  const estiloBotao = `btn waves-effect waves-light ${props.tema}`;
+  return (
+    <div className="row">
       <h1> Cadastro de Produtos e Serviços </h1>
       <form className="formulario">
         <div className="row">
@@ -20,8 +20,12 @@ export default function CadastroProdutos(props){
             <label htmlFor="valor">Valor Unitário</label>
           </div>
           <div className="input-field col s12">
-            <input id="marca" type="number" className="validate" />
+            <input id="marca" type="text" className="validate" />
             <label htmlFor="marca">Marca</label>
+          </div>
+          <div className="input-field col s12">
+            <input id="tipo" type="text" className="validate" />
+            <label htmlFor="tipo">Tipo(Produto/Serviço)</label>
           </div>
         </div>
         <div className="row">
@@ -34,8 +38,5 @@ export default function CadastroProdutos(props){
         </div>
       </form>
     </div>
-    )
+  );
 }
-
-
-    

@@ -6,10 +6,22 @@ export default function ListaClientes(props) {
     <div className="main">
       <h1> Lista de Clientes </h1>
       <div className="collection">
-        <a className="collection-item">Wallace Felipe</a>
-        <a className="collection-item">Robert Lewandowski</a>
-        <a className="collection-item">Luka Doncic</a>
-        <a className="collection-item">Trae Young</a>
+        <a className="collection-item">
+          <b>Nome:</b> Maria Gabriela <br></br>
+          <b>CPF:</b> 999.999.999-9 <br></br>
+        </a>
+        <a className="collection-item">
+          <b>Nome:</b> Cristiano Ronaldo <br></br>
+          <b>CPF:</b> 999.999.999-9 <br></br>
+        </a>
+        <a className="collection-item">
+          <b>Nome:</b> Neymar <br></br>
+          <b>CPF:</b> 999.999.999-9 <br></br>
+        </a>
+        <a className="collection-item">
+          <b>Nome:</b> Marta <br></br>
+          <b>CPF:</b> 999.999.999-9 <br></br>
+        </a>
       </div>
     </div>
   );

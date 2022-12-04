@@ -29,6 +29,10 @@ export default class CadastroProduto extends Component<props> {
               <input id="marca" type="number" className="validate" />
               <label htmlFor="marca">Marca</label>
             </div>
+            <div className="input-field col s12">
+              <input id="tipo" type="number" className="validate" />
+              <label htmlFor="tipo">Tipo(Produto/Serviço)</label>
+            </div>
           </div>
           <div className="row">
             <div className="col s12">

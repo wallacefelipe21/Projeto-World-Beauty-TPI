@@ -11,11 +11,11 @@ O projeto World Beauty, criado para compor a matéria de Técnica de Programaç�
 | 01 | ✔️ Concluído | [ver relatório](https://github.com/wallacefelipe21/Projeto-World-Beauty-TPI/tree/Atividade-I-Projeto-World-Beauty) |
 | 02 | ✔️ Concluído | [ver relatório](https://github.com/wallacefelipe21/Projeto-World-Beauty-TPI/tree/Atividade-II-Projeto-World-Beauty) |
 | 03 | ✔️ Concluído | [ver relatório](https://github.com/wallacefelipe21/Projeto-World-Beauty-TPI/tree/Atividade-III-Projeto-World-Beauty) |
-| 04 | ❌ Não Concluído | [ver relatório] () |
+| 04 | ❌ Não Concluído | --------- |
 | 04 | ❌ Não Concluído | [ver relatório] () |
 
 
 ### :busts_in_silhouette: Equipe
 
-Wallace Felipe De França Souza 
+Wallace Felipe De França Souza <br>
 Pedro Antonio Rizzo Toledo
